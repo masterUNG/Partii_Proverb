@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">พาที สุภาษิต</string>
+    <string name="action_settings">ดาวน์โหลดโมเดล</string>
+    <string name="i01">เข็นครกขึ้นภูเขา</string>
+    <string name="i02">ขี่ช้างจับตั๊กแตน</string>
+    <string name="i03">ไก่เห็นดีงูงูเห็นนมไก่</string>
+    <string name="i04">งมเข็มในมหาสมุทร</string>
+    <string name="i05">จับปลาสองมือ</string>
+    <string name="i06">จับปูใส่กระด้ง</string>
+    <string name="i07">ชี้โพรงให้กระรอก</string>
+    <string name="i08">สอนจระเข้ว่ายน้ำ</string>
+    <string name="i09">จับเสือมือปล่าว</string>
+    <string name="i10">เขียนด้วยมือลบด้วยเท้า</string>
+    <string name="i11">ขวานผ่าซาก</string>
+    <string name="i12">น้ำพึ่งเรือเสือพึ่งป่า</string>
+    <string name="i13">น้ำขึ้นให้รีบตัก</string>
+    <string name="i14">น้ำลดตอผุด</string>
+    <string name="i15">ปิ้งปลาประชดแมว</string>
+    <string name="i16">ไม้ซีกงัดไม้ซุง</string>
+    <string name="i17">รักดีหามจั่วรักชั่วหามเสา</string>
+    <string name="i18">วัวหายล้อมคอก</string>
+    <string name="i19">สีซอให้ควายฟัง</string>
+    <string name="i20">หนูตกถังข้าวสาร</string>
+</resources>
