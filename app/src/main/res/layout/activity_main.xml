@@ -27,8 +27,8 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="142dp"
-        android:layout_height="138dp"
+        android:layout_width="113dp"
+        android:layout_height="107dp"
         android:layout_gravity="center_vertical|center_horizontal"
         android:layout_margin="@dimen/fab_margin"
         app:backgroundTint="@color/about_separator_color"

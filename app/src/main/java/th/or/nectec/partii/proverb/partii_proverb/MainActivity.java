@@ -1,9 +1,6 @@
 package th.or.nectec.partii.proverb.partii_proverb;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
@@ -16,7 +13,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import th.or.nectec.partii.embed.android.EmbeddedUtils.ModelUtil;
+import th.or.nectec.partii.embedded.android.EmbeddedUtils.ModelUtil;
 import th.or.nectec.partii.embedded.android.RecognitionListener;
 import th.or.nectec.partii.embedded.android.SpeechRecognizer;
 
@@ -28,78 +25,79 @@ public class MainActivity extends AppCompatActivity implements RecognitionListen
 
     private boolean isSetupRecognizer = false;
     private ModelUtil mUtil = new ModelUtil();
-    TextView answertxt;
+
     TextView asranswertxt;
     ImageView imgview;
     ImageView answerstatus;
     FloatingActionButton next;
     FloatingActionButton back;
+    String answer = "";
 
     String apikey = "2go-9W7FnLAX3M";
 
 
-    public void changeimg(ImageView imgview, TextView answertxt) {
+    public void changeimg(ImageView imgview) {
 
         if (picorder == 1) {
             imgview.setImageResource(R.drawable.i01);
-            answertxt.setText(R.string.i01);
+            answer = getResources().getString(R.string.i01);
         } else if (picorder == 2) {
             imgview.setImageResource(R.drawable.i02);
-            answertxt.setText(R.string.i02);
+            answer =  getResources().getString(R.string.i02);
         } else if (picorder == 3) {
             imgview.setImageResource(R.drawable.i03);
-            answertxt.setText(R.string.i03);
+            answer =  getResources().getString(R.string.i03);
         } else if (picorder == 4) {
             imgview.setImageResource(R.drawable.i04);
-            answertxt.setText(R.string.i04);
+            answer =  getResources().getString(R.string.i04);
         } else if (picorder == 5) {
             imgview.setImageResource(R.drawable.i05);
-            answertxt.setText(R.string.i05);
+            answer =  getResources().getString(R.string.i05);
         } else if (picorder == 6) {
             imgview.setImageResource(R.drawable.i06);
-            answertxt.setText(R.string.i06);
+            answer =  getResources().getString(R.string.i06);
         } else if (picorder == 7) {
             imgview.setImageResource(R.drawable.i07);
-            answertxt.setText(R.string.i07);
+            answer =  getResources().getString(R.string.i07);
         } else if (picorder == 8) {
             imgview.setImageResource(R.drawable.i08);
-            answertxt.setText(R.string.i08);
+            answer =  getResources().getString(R.string.i08);
         } else if (picorder == 9) {
             imgview.setImageResource(R.drawable.i09);
-            answertxt.setText(R.string.i09);
+            answer =  getResources().getString(R.string.i09);
         } else if (picorder == 10) {
             imgview.setImageResource(R.drawable.i10);
-            answertxt.setText(R.string.i10);
+            answer =  getResources().getString(R.string.i10);
         } else if (picorder == 11) {
             imgview.setImageResource(R.drawable.i11);
-            answertxt.setText(R.string.i11);
+            answer =  getResources().getString(R.string.i11);
         } else if (picorder == 12) {
             imgview.setImageResource(R.drawable.i12);
-            answertxt.setText(R.string.i12);
+            answer =  getResources().getString(R.string.i12);
         } else if (picorder == 13) {
             imgview.setImageResource(R.drawable.i13);
-            answertxt.setText(R.string.i13);
+            answer =  getResources().getString(R.string.i13);
         } else if (picorder == 14) {
             imgview.setImageResource(R.drawable.i14);
-            answertxt.setText(R.string.i14);
+            answer =  getResources().getString(R.string.i14);
         } else if (picorder == 15) {
             imgview.setImageResource(R.drawable.i15);
-            answertxt.setText(R.string.i15);
+            answer =  getResources().getString(R.string.i15);
         } else if (picorder == 16) {
             imgview.setImageResource(R.drawable.i16);
-            answertxt.setText(R.string.i16);
+            answer =  getResources().getString(R.string.i16);
         } else if (picorder == 17) {
             imgview.setImageResource(R.drawable.i17);
-            answertxt.setText(R.string.i17);
+            answer =  getResources().getString(R.string.i17);
         } else if (picorder == 18) {
             imgview.setImageResource(R.drawable.i18);
-            answertxt.setText(R.string.i18);
+            answer =  getResources().getString(R.string.i18);
         } else if (picorder == 19) {
             imgview.setImageResource(R.drawable.i19);
-            answertxt.setText(R.string.i19);
+            answer =  getResources().getString(R.string.i19);
         } else if (picorder == 20) {
             imgview.setImageResource(R.drawable.i20);
-            answertxt.setText(R.string.i20);
+            answer =  getResources().getString(R.string.i20);
         }
 
     }
@@ -114,10 +112,9 @@ public class MainActivity extends AppCompatActivity implements RecognitionListen
 
         imgview = (ImageView) findViewById(R.id.imageView);
         answerstatus = (ImageView) findViewById(R.id.answerstatus);
-        answertxt = (TextView) findViewById(R.id.answer);
         asranswertxt = (TextView) findViewById(R.id.asranswer);
 
-        changeimg(imgview, answertxt);
+        changeimg(imgview);
 
         if (mUtil.isPermissionGranted(getApplicationContext())) {
             if (mUtil.isSyncDir(getExternalFilesDir("")) && !isSetupRecognizer) {
@@ -169,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements RecognitionListen
                 }
                 answerstatus.setVisibility(View.INVISIBLE);
                 asranswertxt.setText("");
-                changeimg(imgview, answertxt);
+                changeimg(imgview);
             }
         });
 
@@ -182,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements RecognitionListen
                 }
                 answerstatus.setVisibility(View.INVISIBLE);
                 asranswertxt.setText("");
-                changeimg(imgview, answertxt);
+                changeimg(imgview);
             }
         });
 
@@ -255,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements RecognitionListen
                 asranswertxt.setText(s);
                 System.out.println("onResult:" + s);
 
-                if(s.trim().equals(answertxt.getText().toString())){
+                if(s.trim().equals(answer)){
                     answerstatus.setImageDrawable(ContextCompat.getDrawable(getBaseContext(), android.R.drawable.checkbox_on_background));
                 }else{
                     answerstatus.setImageDrawable(ContextCompat.getDrawable(getBaseContext(), android.R.drawable.ic_delete));
